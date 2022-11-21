@@ -34,6 +34,10 @@ For the body, the following fields are available:
   error: "message", // red text
 };
 ```
+Prints colored logs to the console.
+
+<img width="286" alt="image" src="https://user-images.githubusercontent.com/62739623/203006122-e83b7188-aae6-4df6-8095-231d62853312.png">
+
 
 Creates logfiles in a logs folder that look like this:
 
