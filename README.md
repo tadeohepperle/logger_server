@@ -1,4 +1,4 @@
-Simple http server to receive logs via http post requests and print them to the console. Useful in contexts, where logging is difficult, for example in webworkers (that have access to the fetch API easily).
+Simple http server to receive logs via http post requests and print them to the console and write to log files. Useful in contexts, where direct logging is difficult.
 
 Setup, run:
 
