@@ -3,29 +3,28 @@ const express = require("express");
 const chalk = require("chalk");
 const cors = require("cors");
 const app = express();
-
-const logsDir = "./logs";
-if (!fs.existsSync(logsDir)) {
-  fs.mkdirSync(logsDir);
-}
+const savelogs = require("./savelogs");
 
 app.use(cors());
 app.use(express.json());
 
 app.post("/", (req, res) => {
   let body = req.body ?? {};
+  let time = new Date().toLocaleString();
+  time = chalk.bgGray(time.padEnd(22, " ")) + "    ";
   if (body.log) {
-    console.log(chalk.white(body.log));
+    console.log(time + chalk.white(body.log));
   }
   if (body.info) {
-    console.log(chalk.blue(body.info));
+    console.log(time + chalk.blue(body.info));
   }
   if (body.warn) {
-    console.log(chalk.yellow(body.warn));
+    console.log(time + chalk.yellow(body.warn));
   }
   if (body.error) {
-    console.log(chalk.red(body.error));
+    console.log(time + chalk.red(body.error));
   }
+  savelogs.saveLog(body);
   res.send("got it");
 });
 

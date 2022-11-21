@@ -1,6 +1,12 @@
 Simple http server to receive logs and print them to the console in contexts, where logging is difficult, for example webworkers.
 
-run with
+Setup, run:
+
+```
+npm install
+```
+
+Start the Server on port 6969 with:
 
 ```
 npm run dev
@@ -24,4 +30,14 @@ for the body, the following fields are available:
 { info: "hello" // blue text
 
 , log: "hello", log: "hello", log: "hello" }
+```
+
+creates logfiles in a logs folder that look like this:
+
+```
+21.11.2022, 14:08:20      LOG:   just a message
+21.11.2022, 14:08:21      INFO:  hello!
+21.11.2022, 14:08:28      INFO:  hello you
+21.11.2022, 14:08:40      WARN:  warning
+21.11.2022, 14:08:55      ERROR: this is an error
 ```
