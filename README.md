@@ -12,7 +12,7 @@ Start the server on port 6969 with:
 npm run dev
 ```
 
-Use the following from inside a webworker locally to get logs to the console and also save the messages in a logfile:
+Use the following from inside some system to get logs to the console and also save the messages in a logfile:
 
 ```js
 fetch("http://localhost:6969/", {
