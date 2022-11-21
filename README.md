@@ -16,7 +16,7 @@ Use the following from inside a webworker locally to get logs to the console and
 
 ```js
 fetch("http://localhost:6969/", {
-  method: "POST", // *GET, POST, PUT, DELETE, etc.
+  method: "POST",
   headers: {
     "Content-Type": "application/json",
   },
@@ -27,9 +27,12 @@ fetch("http://localhost:6969/", {
 For the body, the following fields are available:
 
 ```js
-{ info: "hello" // blue text
-
-, log: "hello", log: "hello", log: "hello" }
+{
+  log: "message", // white text
+  info: "message", // blue text
+  warn: "message", // yellow text
+  error: "message", // red text
+};
 ```
 
 Creates logfiles in a logs folder that look like this:
